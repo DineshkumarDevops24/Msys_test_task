@@ -1,0 +1,83 @@
+{
+  "name": "Configuration",
+  "project": "Demo",
+  "expressVersion": "v14.15.4",
+  "settings": {
+    "apiVersion": "/api/V1",
+    "port": 8000,
+    "nodeEnv": "local",
+    "JWT": {
+      "secretKey": "SEcretKeyDemO",
+      "expiration": "8h"
+    },
+    "baseUrl": "http://localhost:8000/",
+    "database": {
+      "uri": "mongodb://localhost:27017/demo",
+      "user": "",
+      "password": "",
+      "database": "demo"
+    },
+    "routes": {
+      "users": "/api/V1/users",
+      "user": "/api/V1/user/:id",
+      "createUser": "/api/V1/user",
+      "signIn": "/api/V1/signIn",
+      "uploadCsv": "/api/V1/uploadCsv",
+      "todoTasks": "/api/V1/todoTasks",
+      "task": "/api/V1/todoTask",
+      "updateMultipleTasks": "/api/V1/updateTasks"
+    },
+    "statusCode": {
+      "success": {
+        "OK": 200
+      },
+      "clientError": {
+        "badRequest": 400,
+        "Unauthorized": 401,
+        "NotFound": 404,
+        "tokenExpired": 419,
+        "Forbidden": 403,
+        "InValidInput": 422
+      },
+      "serverError": {
+        "internalServerError": 500
+      }
+    },
+    "errors": {
+      "badRequest": {
+        "signIn": "Please enter all required fields email, password",
+        "userIdMissing": "User Id has missing",
+        "requiredFieldsMissing": "Please send a required fields to create user, ex: email, name",
+        "requiredFieldsMissingForTask": "Please send a required fields to create task, ex: name",
+        "userNameMissing": "Email or Password missing",
+        "taskIdMissing": "Task Id has missing"
+      },
+      "internalServerError": {
+        "afterQuery": "Database error. Please try again.",
+        "serverError": "Internal Server Error!!"
+      },
+      "messages": {
+        "userNotFound": "User not found"
+      }
+    },
+    "success": {
+      "messages": {
+        "deleteUser": "User deleted successfully",
+        "userDetail": "User details fetched successfully",
+        "userList": "User list fetched successfully",
+        "createUser": "User created successfully",
+        "loginSuccess": "Logged in successfully",
+        "taskList": "Task list fetched successfully",
+        "taskCreated": "Task has created successfully",
+        "taskCreatedFailed": "Task has created failed",
+        "taskDeleted": "Task has deleted successfully",
+        "taskDeletedFailed": "Failed to delete a task",
+        "taskUpdated": "Task has updated successfully",
+        "taskUpdatedFailed": "Failed to update a task"
+      }
+    }
+  }
+}
+
+
+
